@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Catálogo</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="scripts.js"></script>
+</head>
+<script>
+
+  $(function() {  
+    const modal = $('.modal');
+    $('img').on('click', function(event){
+      const titulo = $(this).data('titulo');
+      const descricao = $(this).data('descricao');
+      $('h2').text(titulo);
+      $('p').text(descricao);
+      modal.css('display', 'flex');
+    });
+
+    $('.close').on('click', function(){
+     modal.hide();
+    });
+  })
+</script>
+<body>
+  <section>
+    <h1>Catálogo</h1>
+
+    <ul>
+      <li>
+        <img src="https://br.web.img2.acsta.net/c_310_420/pictures/20/06/23/20/57/4275033.jpg" alt="..."  data-titulo="Mulher-Maravilha 1984" data-descricao="Na década de 1980, a Mulher-Maravilha enfrenta dois novos inimigos: Max Lord e Mulher-Leopardo">
+      </li>
+      <li>
+        <img src="https://br.web.img3.acsta.net/c_310_420/pictures/20/03/05/20/58/4942195.jpg" alt="..."  data-titulo="Mulher-Maravilha 1984" data-descricao="Na década de 1980, a Mulher-Maravilha enfrenta dois novos inimigos: Max Lord e Mulher-Leopardo">
+      </li>
+      <li>
+        <img src="https://br.web.img3.acsta.net/c_310_420/pictures/20/11/23/17/17/0659074.jpg" alt="..."  data-titulo="Mulher-Maravilha 1984" data-descricao="Na década de 1980, a Mulher-Maravilha enfrenta dois novos inimigos: Max Lord e Mulher-Leopardo">
+      </li>
+      <li>
+        <img src="https://br.web.img2.acsta.net/c_310_420/pictures/20/10/03/00/17/1325398.jpg" alt="..."  data-titulo="Mulher-Maravilha 1984" data-descricao="Na década de 1980, a Mulher-Maravilha enfrenta dois novos inimigos: Max Lord e Mulher-Leopardo">
+      </li>
+    </ul>
+  </section>
+
+  <div class="modal">
+    <div id="containerModal">
+  
+      <span class="close">X</span>
+      <h2>Título</h2>
+  
+      <p>Descrição</p>
+  
+      <button type="button" class="modal__buton close">Fechar</button>
+    </div>
+  </div>
+</body>
+</html>
